@@ -1,6 +1,10 @@
 # Dacon_Solar_power_prediction
 DACON 동서발전 태양광 발전량 예측 AI 경진대회 (public 33등/236팀)
 
+## 0. Notion 주소
+
+notion 링크: https://steadfast-quill-cde.notion.site/5312820d84134cb5a2815ff7af9ffe5b
+
 ## 1. 주제
 
 [https://dacon.io/competitions/official/235720/overview/description](https://dacon.io/competitions/official/235720/overview/description)
