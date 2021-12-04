@@ -2,7 +2,7 @@
 DACON 동서발전 태양광 발전량 예측 AI 경진대회 (public 33등/236팀)
 
 <img src="https://user-images.githubusercontent.com/87663692/144705172-40f3873e-5116-4c47-9cee-3b4b9acc3bfb.png"
-     width="550" height="300"/>
+     width="200" height="300"/>
 
 ## 0. Notion 주소
 
