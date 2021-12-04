@@ -1,5 +1,5 @@
 # Dacon_Solar_power_prediction
-DACON 동서발전 태양광 발전량 예측 AI 경진대회 (public 33등/236팀)
+DACON 동서발전 태양광 발전량 예측 AI 경진대회
 
 <img src="https://user-images.githubusercontent.com/87663692/144705172-40f3873e-5116-4c47-9cee-3b4b9acc3bfb.png"
      width="240" height="300"/>
