@@ -49,17 +49,23 @@ forecast data에서 예보 target time 3시간 간격으로 주어져 있어, cu
 - 파생변수 생성:
 
 (i) 시간에 따른 천구상의 태양 좌표 변수 생성
+
 <- day of year, 시간, 위도, 경도만 있으면 시간에 따른 천구상의 태양 좌표를 구해줄 수 있습니다.
 
 (ii) WindSpeed(m/s)와 WindDirection(degree) 벡터 변환
+
 <- 각도는 0과 360이 이어져야 하므로, 벡터 변환해주었습니다.
 
 (iii) forecast data에 존재하지 않는 이슬점 변수 생성
+
 <- 온도(Temperature), 상대습도(Humidity)을 이용해 생성
+
 <- 추후 feature selection을 통해 다중공선성이 생기는 변수 제거
 
 (iiii) Hour, day of year sin/cos 주기성 설정
+
 <- 데이터를 그대로 사용할 경우, 날씨가 변하는 오후 24시와 오전 한 시/년도가 변하는 365일에서 1일 사이 급격한 변화가 발생합니다.
+
 <- 이를 smooth하게 표현하기 위해 sin,cos으로 변환하여 주기서을 갖도록 설정해주었습니다.
 
 (iiiii) observe data의 feature에 대한 3,6,12,24시간 단위 이동평균(MA) 변수 생성
@@ -67,11 +73,14 @@ forecast data에서 예보 target time 3시간 간격으로 주어져 있어, cu
 ## 5. 모델
 
 LSTM 모델의 경우, 시간적 상관성과 기상 요인과의 상관성으로 인한 발전량 예측의 어려움을 해결할 수 있지만 결과가 비교적 좋지 않았습니다.
+
 Sarimax(Sarima+exogeneous variable) 모델의 경우, trend에 대하여 ARIMA를 수행하고, 계절성에 대해서 추가적으로 ARIMA를 수행하는 모델입니다. 시계열 데이터에 적합한 모델이기에 사용해보았지만, 시간이 매우 많이 걸리며 그에 비해 결과가 좋지 않았습니다.
+
 결론적으로 저희 팀은 LightGBM 모델과 grid_search로 best parameter를 찾아 사용했습니다.
 
 ## 6. 결과
 
 Public 평가에서 총 240팀 중 35등을 기록했습니다.
+
 <img src="https://user-images.githubusercontent.com/87663692/144706538-0d40efe0-537f-47c3-84d4-8e24c55dc237.png"
-     width="550" height="300"/>
+     width="250" height="200"/>
